@@ -340,7 +340,7 @@ transaction_record:
 
 transaction_record:
     id: publisher_territory
-    head: SPT
+    head: SPT,OPT
     rules:
       [
         field: ip_n
@@ -396,6 +396,14 @@ transaction_record:
         optional [
             field: media_type
         ]
+        optional [
+            field: recording_title
+            field: version_title
+            field: display_artist
+            field: record_label
+            field: isrc_validity
+            field: submitter_recording_identifier
+        ]
       ]
 
 transaction_record:
@@ -422,6 +430,7 @@ record:
         optional
         [
           field: character_set
+          field: hdr_version_type
         ]
       ]
 

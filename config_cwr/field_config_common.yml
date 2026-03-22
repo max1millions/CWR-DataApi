@@ -137,7 +137,7 @@ date_publication_printed_edition:
 
 duration:
   type: time
-  size: 8
+  size: 6
   name: Duration
 
 ean13:
@@ -152,6 +152,12 @@ edi_standard:
   name: EDI Standard Version
   values:
     - '01.10'
+
+hdr_version_type:
+  type: alphanum
+  size: 3
+  name: Header Version Type
+  results_name: version_type
 
 entire_work_title:
   type: alphanum
@@ -599,7 +605,7 @@ submitter_work_n:
   name: Submitter Work Number
 
 tax_id:
-  type: numeric
+  type: alphanum
   size: 9
   name: Tax ID Number
 
@@ -766,3 +772,33 @@ year_production:
   type: numeric
   size: 4
   name: Year of Production
+
+recording_title:
+  type: alphanum_ext
+  size: 60
+  name: Recording Title
+
+version_title:
+  type: alphanum_ext
+  size: 60
+  name: Version Title
+
+display_artist:
+  type: alphanum_ext
+  size: 60
+  name: Display Artist
+
+record_label:
+  type: alphanum
+  size: 60
+  name: Record Label
+
+isrc_validity:
+  type: alphanum
+  size: 20
+  name: ISRC Validity
+
+submitter_recording_identifier:
+  type: alphanum_end
+  size: 14
+  name: Submitter Recording Identifier

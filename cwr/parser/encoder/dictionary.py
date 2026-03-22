@@ -924,6 +924,12 @@ class RecordingDetailDictionaryEncoder(TransactionHeaderDictionaryEncoder):
         encoded['media_type'] = record.media_type
         encoded['recording_format'] = record.recording_format
         encoded['recording_technique'] = record.recording_technique
+        encoded['recording_title'] = getattr(record, 'recording_title', '')
+        encoded['version_title'] = getattr(record, 'version_title', '')
+        encoded['display_artist'] = getattr(record, 'display_artist', '')
+        encoded['record_label'] = getattr(record, 'record_label', '')
+        encoded['isrc_validity'] = getattr(record, 'isrc_validity', '')
+        encoded['submitter_recording_identifier'] = getattr(record, 'submitter_recording_identifier', '')
 
         return encoded
 
@@ -1097,6 +1103,7 @@ class TransmissionHeaderDictionaryEncoder(Encoder):
         encoded['transmission_date'] = record.transmission_date
         encoded['edi_standard'] = record.edi_standard
         encoded['character_set'] = record.character_set
+        encoded['version_type'] = record.version_type
 
         return encoded
 

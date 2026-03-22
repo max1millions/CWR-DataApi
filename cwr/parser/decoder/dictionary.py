@@ -587,6 +587,8 @@ class TransmissionHeaderDictionaryDecoder(Decoder):
                                     edi_standard=data['edi_standard'])
         if 'character_set' in data:
             header.character_set = data['character_set']
+        if 'version_type' in data:
+            header.version_type = data['version_type']
 
         return header
 

@@ -115,7 +115,7 @@ class InterestedPartyRecord(TransactionRecord, metaclass=ABCMeta):
                  record_type='',
                  transaction_sequence_n=0,
                  record_sequence_n=0,
-                 first_recording_refusal='U',
+                 first_recording_refusal='N',
                  usa_license='',
                  pr_society=None,
                  pr_ownership_share=0,
@@ -292,7 +292,7 @@ class InterestedPartyRecord(TransactionRecord, metaclass=ABCMeta):
 
 class IPTerritoryOfControlRecord(TransactionRecord):
     """
-    Represents a CWR Publisher or Writer Territory of Control (SPT/SWT).
+    Represents a CWR Publisher or Writer Territory of Control (SPT/OPT/SWT).
 
     This indicates if a Publisher or Writer has control or not over a
     Territory, and the shares it has on it.
@@ -551,7 +551,7 @@ class PublisherRecord(InterestedPartyRecord):
                  sr_society=None,
                  sr_ownership_share=0,
                  special_agreements=None,
-                 first_recording_refusal='U',
+                 first_recording_refusal='N',
                  usa_license=''
                  ):
         """
@@ -1100,9 +1100,9 @@ class WriterRecord(InterestedPartyRecord):
                  writer=None,
                  writer_designation=None,
                  work_for_hire=False,
-                 writer_unknown='F',
-                 reversionary='U',
-                 first_recording_refusal='U',
+                 writer_unknown='',
+                 reversionary='',
+                 first_recording_refusal='N',
                  usa_license='',
                  pr_society=None,
                  pr_ownership_share=0,
