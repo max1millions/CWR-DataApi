@@ -627,6 +627,7 @@ class PublisherForWriterDictionaryEncoder(TransactionHeaderDictionaryEncoder):
             record.society_assigned_agreement_n
         encoded['submitter_agreement_n'] = record.submitter_agreement_n
         encoded['writer_ip_n'] = record.writer_ip_n
+        encoded['publisher_sequence_n'] = record.publisher_sequence_n
 
         return encoded
 

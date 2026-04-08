@@ -582,6 +582,7 @@ transaction_record:
         field: submitter_agreement_n
         field: society_assigned_agreement_n
         field: writer_ip_n
+        field: publisher_sequence_n
       ]
 
 transaction_record:

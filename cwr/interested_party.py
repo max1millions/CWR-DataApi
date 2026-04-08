@@ -995,7 +995,8 @@ class PublisherForWriterRecord(TransactionRecord):
                  publisher_name='',
                  writer_ip_n='',
                  submitter_agreement_n=None,
-                 society_assigned_agreement_n=None
+                 society_assigned_agreement_n=None,
+                 publisher_sequence_n=0
                  ):
         super(PublisherForWriterRecord, self).__init__(
             record_type,
@@ -1010,6 +1011,9 @@ class PublisherForWriterRecord(TransactionRecord):
         # Agreement IDs
         self._submitter_agreement_n = submitter_agreement_n
         self._society_assigned_agreement_n = society_assigned_agreement_n
+
+        # Publisher chain link
+        self._publisher_sequence_n = publisher_sequence_n
 
     @property
     def publisher_ip_n(self):
@@ -1081,6 +1085,21 @@ class PublisherForWriterRecord(TransactionRecord):
     @publisher_name.setter
     def publisher_name(self, value):
         self._publisher_name = value
+
+    @property
+    def publisher_sequence_n(self):
+        """
+        Publisher Sequence # field. Numeric.
+
+        Must match the Publisher Sequence # of the relating SPU/OPU record.
+
+        :return: the publisher sequence number in the chain
+        """
+        return self._publisher_sequence_n
+
+    @publisher_sequence_n.setter
+    def publisher_sequence_n(self, value):
+        self._publisher_sequence_n = value
 
 
 class WriterRecord(InterestedPartyRecord):
